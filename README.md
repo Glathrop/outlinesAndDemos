@@ -1,7 +1,7 @@
 # Reducing Lost Customers With Automation
 A little context....
 
-*Implementing this workflow saved thousands of wasted employee hours and, due to the unified messaging, decreased our LOST customers from ~53% to ~33% of our outcomes, a 60% improvement. Each month, hundreds of additional customers move one step further in our conversion funnel.*
+**Implementing this workflow saved thousands of wasted employee hours and, due to the unified messaging, decreased our LOST customers from ~53% to ~33% of our outcomes, a 60% improvement. Each month, hundreds of additional customers move one step further in our conversion funnel.**
 ---
 
  
