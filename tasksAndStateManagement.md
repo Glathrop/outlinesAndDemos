@@ -2,11 +2,11 @@
 
 **_Staff is the most valuable company resource. They're also the most expensive. The balance between productivity and job satisfaction is a delicate one, and the fastest way to a good parity is with process buy-in. If the staff feels the processes & provided tools are helping them achieve their goals, they operate with an open mind._**
 
-**In a task-based system like a CRM, this buy-in is crucial. The quality of our insight is directly related to the data collected & input by the users. We want them happy, working toward company goals.**
+**_In a task-based system like a CRM, this buy-in is crucial. The quality of our insight is directly related to the data collected & input by the users. We want them happy, working toward company goals._**
 
-**Our system uses a one-click "Work" button to complete tasks. Once clicked, the system intelligently monitors the regular actions users take to see if their work completes the active task. This setup ensures the data integrity of the CRM & requires zero notes, no extra clicks & no separate action from the users.**
+**_Our system uses a one-click "Work" button to complete tasks. Once clicked, the system intelligently monitors the regular actions users take to see if their work completes the active task. This setup ensures the data integrity of the CRM & requires zero notes, no extra clicks & no separate action from the users._**
 
-**By getting out of the way of our users, we leave them with only the work at hand. In a one-click working environment, there's not much to not like.**
+**_By getting out of the way of our users, we leave them with only the work at hand. In a one-click working environment, there's not much to not like._**
 
 ---
 
@@ -51,10 +51,12 @@ The priority scale enables us to put tasks that require immediate attention fron
 ![](https://www.glathrop.com/content/images/2019/08/new-tasks.gif)
 
 The priority attribute gives the dev team an easy mechanism for incorporating user feedback. If the staff or management feels we are missing or undervaluing specific tasks, all we need to do is update the priority to place the task in a new order.
----
 
+---
 # Technical Summary
+
 **Heavy use of the Redux store allows us to handle complex client-side operations with one button click & minimal code.**
+
 ---
 
 Watch a user complete a Respond to Text task as you saw in the feature overview...
@@ -89,6 +91,7 @@ handleClick() {
     });
   }
  ```
+ 
  #### Redux Action
  The performTask function is a Redux action we import into the component. The action itself evaluates the arguments to determine:
 
