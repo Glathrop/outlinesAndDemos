@@ -45,4 +45,50 @@ The code looks like this...
     #  Quick yes or no
     _send_text(ghost,'ghosts', 10)
     _send_email(ghost, 'ghosts', 10)
-    ch.ack(msg)```
+    ch.ack(msg)
+```
+
+The send_text & send_email use a helper function named select_template to generate the message itself.
+
+```coffeescript
+_select_template = require './_select_sms_template'
+```
+
+select_template takes in the group ('ghosts' in this case), the day the action occurs & any necessary data.
+
+```coffeescript
+  template = _select_template(group, day, data)
+```
+In the select_template file, we import each template separately, and another switch case generates the template body complete with any template string insertion.
+
+```coffeescript
+ghost01 = require "../templates/ghosts/sms/day01"
+ghost02 = require "../templates/ghosts/sms/day02"
+
+module.exports = (group, day, data) ->
+  if group is 'ghosts'
+    template = ''
+    switch (day)
+      when 1
+        # Questions About Inventory or Financing?
+        template = ghost01(data)
+      when 2
+        # What Kind of Vehicle?
+        template = ghost02(data)
+```
+
+The message itself looks like:
+
+```coffeescript
+module.exports = (data) ->
+  data =
+    body: "Hi #{data.name.first_name},\n
+    \nHave you had any luck finding the vehicle you were searching for?\n
+    \n-Michelle\n
+    \nVP Auto Sales\n
+    \nhttps://vp3.link/site"
+ ```
+ 
+ Once generated, we return the template to send_text or send_email, which handles the act of sending the message.
+
+This setup allows us to easily change the template or which day to send the message. Many server workflows, like task generation, use this flexible pattern.
