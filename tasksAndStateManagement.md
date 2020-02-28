@@ -1,4 +1,4 @@
-# Making Tasks Our Users Don't Hate with Complex State Management \
+# Making Tasks Our Users Don't Hate with Complex State Management
 
 **Staff is the most valuable company resource. They're also the most expensive. The balance between productivity and job satisfaction is a delicate one, and the fastest way to a good parity is with process buy-in. If the staff feels the processes & provided tools are helping them achieve their goals, they operate with an open mind.**
 
@@ -17,7 +17,7 @@ The primary reduction of busywork in our system comes from our prospecting autom
 ## The Work Button
 Tasks are worthless if they are easily dismissed or never worked. Our enforcement for this is straightforward; the only way to clear a task is by clicking a "Work" button.
 
-[](https://www.glathrop.com/content/images/2019/08/work-button-in-action.gif)
+![](https://www.glathrop.com/content/images/2019/08/work-button-in-action.gif)
 
 Watch as the user completes a RESPOND TO TEXT task:
 
@@ -28,7 +28,7 @@ Watch as the user completes a RESPOND TO TEXT task:
 - The system monitors to see if the user action is valid for clearing the task. If so, it fires task completion data to the server.
 - The server executes a task completion workflow which records activity, deletes the task & other associated processes.
 
-[](https://www.glathrop.com/content/images/2019/08/Respond-to-Text-Task-Completion.gif)
+![](https://www.glathrop.com/content/images/2019/08/Respond-to-Text-Task-Completion.gif)
 
 The work button is deceptively simple. Quite a bit of functionality happens behind the scenes. For instance:
 
@@ -48,7 +48,7 @@ The priority scale enables us to put tasks that require immediate attention fron
 - Inactive customer back on the retail website
 - New Lead
 
-[](https://www.glathrop.com/content/images/2019/08/new-tasks.gif)
+![](https://www.glathrop.com/content/images/2019/08/new-tasks.gif)
 
 The priority attribute gives the dev team an easy mechanism for incorporating user feedback. If the staff or management feels we are missing or undervaluing specific tasks, all we need to do is update the priority to place the task in a new order.
 ---
@@ -59,10 +59,11 @@ The priority attribute gives the dev team an easy mechanism for incorporating us
 
 Watch a user complete a Respond to Text task as you saw in the feature overview...
 
-[](https://www.glathrop.com/content/images/2019/08/Respond-to-Text-Task-Completion.gif)
+![](https://www.glathrop.com/content/images/2019/08/Respond-to-Text-Task-Completion.gif)
 
 You can see how the Work button function by watching the pattern play out in the Redux store. The system uses the store to watch the actions a user is taking within the app & determine if they complete the selected task.
-[](https://www.glathrop.com/content/images/2019/08/Respond-to-Text-Redux-Store.gif)
+
+![](https://www.glathrop.com/content/images/2019/08/Respond-to-Text-Redux-Store.gif)
 
 
 ## How It Works
@@ -154,7 +155,7 @@ module.exports = (req, res) ->
       res
         .status(204).end()
     .catch send_error res
-    ```
+ ```
 
 The delete_task command is picked up by the appropriate microservice & executes a series of steps.
 
