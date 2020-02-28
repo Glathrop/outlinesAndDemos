@@ -24,7 +24,8 @@ When the switch statement evaluates to true, we can choose between five options
 - Do nothing & ack the message.
 
 The code looks like this... 
-```when 7
+```coffeescript
+ when 7
     task =
       assignment: {
         primary_role: 'BDC Rep'
