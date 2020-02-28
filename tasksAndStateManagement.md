@@ -1,12 +1,13 @@
 # Making Tasks Our Users Don't Hate with Complex State Management \
 
-**Staff is the most valuable company resource. They're also the most expensive. The balance between productivity and job satisfaction is a delicate one, and the fastest way to a good parity is with process buy-in. If the staff feels the processes & provided tools are helping them achieve their goals, they operate with an open mind.
+**Staff is the most valuable company resource. They're also the most expensive. The balance between productivity and job satisfaction is a delicate one, and the fastest way to a good parity is with process buy-in. If the staff feels the processes & provided tools are helping them achieve their goals, they operate with an open mind.**
 
-In a task-based system like a CRM, this buy-in is crucial. The quality of our insight is directly related to the data collected & input by the users. We want them happy, working toward company goals.
+**In a task-based system like a CRM, this buy-in is crucial. The quality of our insight is directly related to the data collected & input by the users. We want them happy, working toward company goals.**
 
-Our system uses a one-click "Work" button to complete tasks. Once clicked, the system intelligently monitors the regular actions users take to see if their work completes the active task. This setup ensures the data integrity of the CRM & requires zero notes, no extra clicks & no separate action from the users.
+**Our system uses a one-click "Work" button to complete tasks. Once clicked, the system intelligently monitors the regular actions users take to see if their work completes the active task. This setup ensures the data integrity of the CRM & requires zero notes, no extra clicks & no separate action from the users.**
 
-By getting out of the way of our users, we leave them with only the work at hand. In a one-click working environment, there's not much to not like.**
+**By getting out of the way of our users, we leave them with only the work at hand. In a one-click working environment, there's not much to not like.**
+
 ---
 
 Everyone hates busywork. Unnecessary repetitive action is a morale killer for staff & eliminates time managers could be directing work toward higher return activity. My definition of busywork is anything a computer could do equally effectively.
