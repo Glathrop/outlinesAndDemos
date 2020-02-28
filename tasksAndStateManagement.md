@@ -1,6 +1,6 @@
 # Making Tasks Our Users Don't Hate with Complex State Management
 
-**Staff is the most valuable company resource. They're also the most expensive. The balance between productivity and job satisfaction is a delicate one, and the fastest way to a good parity is with process buy-in. If the staff feels the processes & provided tools are helping them achieve their goals, they operate with an open mind.**
+**_Staff is the most valuable company resource. They're also the most expensive. The balance between productivity and job satisfaction is a delicate one, and the fastest way to a good parity is with process buy-in. If the staff feels the processes & provided tools are helping them achieve their goals, they operate with an open mind._**
 
 **In a task-based system like a CRM, this buy-in is crucial. The quality of our insight is directly related to the data collected & input by the users. We want them happy, working toward company goals.**
 
