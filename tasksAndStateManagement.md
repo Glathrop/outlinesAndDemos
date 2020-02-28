@@ -174,4 +174,4 @@ The interplay between Redux Action & React Component is very flexible.
 
 For instance, sometimes, merely viewing a particular page should complete a task. In this case, we call performTask during the onComponentMount part of the React component lifecycle. If the user needs to take a deliberate action, then we include performTask as a prop or an event handler.
 
-In either case, the handles array lets us control the tasks each component can complete individually.
+In either case, the ```handles``` array lets us control the tasks each component can complete individually.
