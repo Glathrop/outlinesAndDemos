@@ -120,8 +120,8 @@ module.exports = (data) ->
     body: "Hi #{data.name.first_name},\n
     \nHave you had any luck finding the vehicle you were searching for?\n
     \n-Michelle\n
-    \nVP Auto Sales\n
-    \nhttps://vp3.link/site"
+    \n Dealership Name \n
+    \nhttps://xxxxxxx.link/site"
  ```
  
  Once generated, we return the template to send_text or send_email, which handles the act of sending the message.
