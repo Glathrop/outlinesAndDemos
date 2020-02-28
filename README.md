@@ -1,5 +1,9 @@
 # Reducing Lost Customers With Automation
 A little context....
+
+*Implementing this workflow saved thousands of wasted employee hours and, due to the unified messaging, decreased our LOST customers from ~53% to ~33% of our outcomes, a 60% improvement. Each month, hundreds of additional customers move one step further in our conversion funnel.*
+---
+
  
 A cron job identifies customers who have not engaged with us beyond browsing on the website then sends their information to a long-running worker queue for evaluation. The queue looks at the length of time since the customer entered our system and mimics the best-practices a user performs when prospecting leads.
 
