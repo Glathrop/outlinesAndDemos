@@ -10,8 +10,32 @@ With the app launched, we quickly saw our most significant opportunity was to im
 
 ![](https://www.glathrop.com/content/images/2019/08/Screen-Shot-2019-08-06-at-1.44.05-PM.png)
 
+Each sales team member attempted their approach with mixed results. Naturally, some phrasing or intros will work better than others, but a lousy text or email could give customers a reason to never engage with us.
 
+I tried to dissect the problem. Once a customer engages, you can tailor your messaging to their individual needs, concerns, and abilities (ie - price focused, mileage focused, feature focused). However, until that point, you have no idea how what approach will work best. Therefore, messages can be generic ( and A/B tested!) until a customer engages. Once engaged, tailored communication is necessary.
+
+The takeaway was clear. *Automate the prospecting of customers until they engage.* With automation, I saw an opportunity to reduce the percentage of LOST customers and, more importantly, eliminate the wasted time our team was spending on generic prospecting.
+
+We used customer segmentation to get this done. First, we divided our customers into two groups:
+- *Ghosts* - Customers who had never responded to a text, email, or answered a phone call.
+- *Non-Ghosts* = Customers who had engaged with us.
+
+Then we laid out a workflow to perform the automation:
+
+- A cron grabs every active prospect attempt (*our system classification & DB record for an attempt to purchase a vehicle*).
+- We send customers with active prospect attempts to a worker queue that determines if they are GHOSTS or not.
+- We send GHOST customers to a second worker queue that performs various action.
+- A switch case (code snippet in Technical Deep Dive) in the worker looks at how far a customer is into the prospecting cycle. Different days have different activity.
+- Depending on the day, the system will text or email the customer a custom message or assign a task for a user to call.
+- If the user has hit 31 days into the prospecting cycle and is still a GHOST, the system automatically marks them as LOST.
+
+ ## Result
  
+By using automation to provide consistent prospecting & messaging, we decreased our LOST customers from ~53% to ~33% of all outcomes. With an average of around 2100 leads monthly, this means ~420 more customers engage with us each month. Engagement after a the online activity is a crucial step in our sales funnel, so this is a material change.
+
+![](https://www.glathrop.com/content/images/2019/08/Screen-Shot-2019-08-06-at-3.19.17-PM.png)
+
+## Technical Summary
 A cron job identifies customers who have not engaged with us beyond browsing on the website then sends their information to a long-running worker queue for evaluation. The queue looks at the length of time since the customer entered our system and mimics the best-practices a user performs when prospecting leads.
 
 All communication from the system comes from "Michelle," so staff can easily see who did what.
