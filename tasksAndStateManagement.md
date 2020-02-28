@@ -78,7 +78,7 @@ We take a simple button like this.
 <Button basic onClick={() => this.handleClick()}>
 ```
 
-Then we bind a Redux action to the Button's handleClick method & pass in a selection of arguments from the Redux store. The handles array lets this pattern remain flexible throughout the app as different React components can be set to handle various task types.
+Then we bind a Redux action to the Button's ```handleClick``` method & pass in a selection of arguments from the Redux store. The handles array lets this pattern remain flexible throughout the app as different React components can be set to handle various task types.
 
 ```jsx
 handleClick() {
@@ -93,7 +93,7 @@ handleClick() {
  ```
  
  #### Redux Action
- The performTask function is a Redux action we import into the component. The action itself evaluates the arguments to determine:
+ The ```performTask``` function is a Redux action we import into the component. The action itself evaluates the arguments to determine:
 
 1. Is the user currently working a task?
 2. Does the handles array contain the selectedTaskType?
@@ -115,7 +115,9 @@ export function performTask(taskDetails) {
   };
 }
 ```
+
 The completeTaskWorkflow makes a post request to our server with information on the completed task. When we receive a success response, the function dispatches more Redux actions that show the user a Success notification & rehydrates the Redux store with the necessary, updated information. This pattern handles all client-side interaction.
+
 ```jsx
 export function completeTaskWorkflow(taskId, customerId) {
   return (dispatch) => {
@@ -160,7 +162,7 @@ module.exports = (req, res) ->
     .catch send_error res
  ```
 
-The delete_task command is picked up by the appropriate microservice & executes a series of steps.
+The ```delete_task``` command is picked up by the appropriate microservice & executes a series of steps.
 
 - Error checking
 - Deleting the task from the database
