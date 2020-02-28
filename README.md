@@ -2,7 +2,14 @@
 A little context....
 
 **Implementing this workflow saved thousands of wasted employee hours and, due to the unified messaging, decreased our LOST customers from ~53% to ~33% of our outcomes, a 60% improvement. Each month, hundreds of additional customers move one step further in our conversion funnel.**
+
 ---
+
+With the app launched, we quickly saw our most significant opportunity was to improve engagement with the 50+% of our customers classified as LOST.  Half our leads never engaged with us past submitting a lead or dropped contact during our 30-day prospecting cycle. Worse, our staff was spending a considerable portion of their day prospecting customers who would NEVER speak with us.
+
+
+![](https://www.glathrop.com/content/images/2019/08/Screen-Shot-2019-08-06-at-1.44.05-PM.png)
+
 
  
 A cron job identifies customers who have not engaged with us beyond browsing on the website then sends their information to a long-running worker queue for evaluation. The queue looks at the length of time since the customer entered our system and mimics the best-practices a user performs when prospecting leads.
