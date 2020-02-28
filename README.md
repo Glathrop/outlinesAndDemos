@@ -7,3 +7,4 @@ Graham
 
 ## Direct Links
 [Reducing Lost Customers With Automation](https://github.com/Glathrop/outlinesAndDemos/blob/master/reducingLostCustomers.md)
+[Authentication Class Example](https://github.com/Glathrop/outlinesAndDemos/blob/master/exampleAuthenticationClass.js)
