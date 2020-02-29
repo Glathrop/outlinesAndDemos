@@ -1,4 +1,4 @@
-# Making Tasks Our Users Don't Hate with Complex State Management
+# Simplifying Task Based Work with Complex State Management
 
 **_Staff is the most valuable company resource. They're also the most expensive. The balance between productivity and job satisfaction is a delicate one, and the fastest way to a good parity is with process buy-in. If the staff feels the processes & provided tools are helping them achieve their goals, they operate with an open mind._**
 
