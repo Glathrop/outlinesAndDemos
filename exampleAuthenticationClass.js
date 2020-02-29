@@ -26,15 +26,14 @@ export default class Auth {
   // important. This is where you request the parameters from Auth0 that you
   // want encode in the returned JWT token. See:
   // https://auth0.com/docs/tokens
-  
+  // All necessary scope must be requested here on token request
+
   auth0 = new auth0.WebAuth({
     domain: 'xxxxxxxxx.auth0.com',
     clientID: 'xxxxxxxxx',
-    // redirectUri: `${CALLBACK_URL}/authentication/auth0/callback`,
     redirectUri: `${CALLBACK_URL}/xxxxxxxxx/callback`,
     audience: 'https://xxxxxxxxx.xxxxxxxxx/private/api',
     responseType: 'token id_token',
-    // All necessary scope must be requested here on token request
     scope: 'email read:all write:all'
   });
 
@@ -51,12 +50,11 @@ export default class Auth {
   // the callback URL, parses it and sets the decoded token in the URL into
   // local storage. The token includes an expiration time and all user data from
   // the Auth0 side of things.
+
   handleAuthentication() {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        // history.replace('/');
-        // window.location = '/';
       } else if (err) {
         window.location = '/crm';
         console.log(err);
@@ -67,13 +65,12 @@ export default class Auth {
   // This is executed during the authentication callback process. You can see
   // what is set to localStorage here. Once localStorage is set we tell the
   // program to nav back to home at '/'
+
   setSession(authResult) {
-    // Set the time that the access token will expire at
     let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
-    // navigate to the home route
     window.location = '/crm';
   }
 
@@ -89,6 +86,7 @@ export default class Auth {
 
   // This function is called by the RootScene component to check if a users has
   // a valid token in localStorage. The token must be both valid AND not expired
+
   isAuthenticated() {
     // Check whether the current time is past the
     // access token's expiry time
@@ -98,6 +96,7 @@ export default class Auth {
 
   // Helper function that uses the Auth0 library to bring up the hosted auth
   // page
+
   login() {
     this.auth0.authorize();
   }
