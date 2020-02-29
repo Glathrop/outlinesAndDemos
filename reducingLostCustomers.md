@@ -36,7 +36,9 @@ By using automation to provide consistent prospecting & messaging, we decreased 
 ![](https://www.glathrop.com/content/images/2019/08/Screen-Shot-2019-08-06-at-3.19.17-PM.png)
 
 ## Technical Summary
-A cron job identifies customers who have not engaged with us beyond browsing on the website then sends their information to a long-running worker queue for evaluation. The queue looks at the length of time since the customer entered our system and mimics the best-practices a user performs when prospecting leads.
+**_A cron job identifies customers who have not engaged with us beyond browsing on the website then sends their information to a long-running worker queue for evaluation. The queue looks at the length of time since the customer entered our system and mimics the best-practices a user performs when prospecting leads._**
+
+---
 
 All communication from the system comes from "Michelle," so staff can easily see who did what.
 
