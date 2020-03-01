@@ -43,16 +43,16 @@ By using automation to provide consistent prospecting & messaging, we decreased 
 All communication from the system comes from "Michelle," so staff can easily see who did what.
 
 ## Goals
-We want the system to reach out with a series of general prospecting messages at different points in time. Both the message & the message timing should be easily changeable.
+We want the system to reach out with a series of general prospecting messages at different points in time ONLY to customers who have to interact with us. Both the message & the message timing should be easily changeable.
 
 ## Automation
-Each business day, we run a cron to gather all "ghost" customers (customers who haven't spoken with us yet) with an active prospect attempt.
+Each business day, we run a cron to gather all "ghost" customers (customers who have yet to speak with us) with an active prospect attempt.
 
 Next, we send each result to a worker queue.
 
-The queue uses a switch case to evaluate a parameter named days_since_inbound. For a ghost customer, this parameter will go up until the customer engages with us via phone, text, or email.
+The queue uses a switch case to evaluate a parameter named ```days_since_inbound```. For a ghost customer, this parameter will go up until the customer engages with us via phone, text, or email.
 
-When the switch statement evaluates to true, we can choose between five options
+When the switch statement evaluates to true, we can choose between five options:
 
 - Create Task
 - Inactivate Customer
@@ -61,6 +61,7 @@ When the switch statement evaluates to true, we can choose between five options
 - Do nothing & ack the message.
 
 The code looks like this... 
+
 ```coffeescript
  when 7
     task =
@@ -85,18 +86,18 @@ The code looks like this...
     ch.ack(msg)
 ```
 
-The send_text & send_email use a helper function named select_template to generate the message itself.
+The ```send_text``` & ```send_email``` use a helper function named ```select_template``` to generate the message itself.
 
 ```coffeescript
 _select_template = require './_select_sms_template'
 ```
 
-select_template takes in the group ('ghosts' in this case), the day the action occurs & any necessary data.
+```select_template``` takes in the group ('ghosts' in this case), the day the action occurs & any necessary data.
 
 ```coffeescript
   template = _select_template(group, day, data)
 ```
-In the select_template file, we import each template separately, and another switch case generates the template body complete with any template string insertion.
+In the ```select_template``` file, we import each template separately, and another switch case generates the template body complete with any template string insertion.
 
 ```coffeescript
 ghost01 = require "../templates/ghosts/sms/day01"
@@ -126,6 +127,6 @@ module.exports = (data) ->
     \nhttps://xxxxxxx.link/site"
  ```
  
- Once generated, we return the template to send_text or send_email, which handles the act of sending the message.
+ Once generated, we return the template to ```send_text``` or ```send_email```, which handles the act of sending the message.
 
 This setup allows us to easily change the template or which day to send the message. Many server workflows, like task generation, use this flexible pattern.
